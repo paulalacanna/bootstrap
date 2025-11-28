@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="paper container">
+        <h1 class="py-md-4 py-sm-1 text-center">Bienvenidos a la aventura de Gravity Falls!</h1>
+        <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container-fluid">
+                <!--<a class="navbar-brand" href="#">Navbar</a>-->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="Produccion.html">Produccion</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="Nosotros.html">Nosotros</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="row">
+             <div class="col-md-8 col-sm-12 g-4"></div>
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                        class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="imagent.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="dos.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="portal.jpg" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-sm-12 g-4">
+                <div class="card">
+                    <img src="gnomos.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">Misión: 10 segundos. Dipper encontró un diario extraño y despertó a las
+                            criaturas del bosque. Tu misión es simple: ¡Ayudalo a sobrevivir al ataque de los gnomos! El
+                            Tío Stan te está observando, tratá de no arruinar el verano.</p>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal">
+                            <style>
+                                body {
+                                    background-color: rgb(200, 151, 151);
+                                }
+                            </style>
+                            Aventura Grafica
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-fullscreen">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Aventura grafica</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <iframe src="tpfinal1/index.html" frameborder="0 " width="100%"
+                                            height="490"></iframe>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-12 g-4">
+                <div class="card">
+                    <img src="stan.jpg" class="card-img-top" alt="...">
+
+                    <div class="card-body">
+                        <h5 class="card-title">Manual de instrucciones de Gravity Falls</h5>
+                        <p class="card-text">Descubri la jugabilidad de nuestra creacion.</p>
+                    </div>
+                </div>
+                <div class="accordion accordion-flush" id="accordionFlushExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingOne">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseOne" aria-expanded="false"
+                                aria-controls="flush-collapseOne">
+                                ¿Cuál es el Objetivo?
+                            </button>
+                        </h2>
+                        <div id="flush-collapseOne" class="accordion-collapse collapse"
+                            aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">Tenes que resistir exactamente 10 segundos corriendo por el
+                                bosque. Si el contador de tiempo llega a cero y sigues vivo, ¡ganarás el juego!
+                                <code></code>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseTwo" aria-expanded="false"
+                                aria-controls="flush-collapseTwo">
+                                Controles del Juego
+                            </button>
+                        </h2>
+                        <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                            aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">Es muy fácil: Solo necesitas usar la BARRA ESPACIADORA.
+                                Presiónala justo a tiempo para que Dipper salte por encima de los gnomos. <code>.</code>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseThree" aria-expanded="false"
+                                aria-controls="flush-collapseThree">
+                                Los enemigos: Los Gnomos.
+                            </button>
+                        </h2>
+                        <div id="flush-collapseThree" class="accordion-collapse collapse"
+                            aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">Los gnomos aparecerán por la derecha a diferentes velocidades.
+                                Cuidado: ¡Solo tienes una vida! Si tocas a un gnomo, el juego termina inmediatamente.
+                                <code></code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class=" g-4"></div>
+            <iframe src="tpfinal1/index.html" frameborder="0" width="650" height="490"></iframe>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 col-sm-2 g-4">
+                <img src="bill.jpg" alt="" class="img-fluid">
+            </div>
+            <div class="col-md-6 col-sm-10 g-4">
+                <h4>Descubre mas</h4>
+                <p>¡Este sitio habla sobre nuestra aventura interactiva que esta hecha con JavaScript! Fue desarrollada
+                    usando p5.js para recrear la física de Dipper (incluyendo la gravedad y los saltos) y aplicar
+                    Programación Orientada a Objetos (POO). Si el código falla, Bill es el único responsable. ¿De verdad
+                    pensás que ganaste? Bill Cipher siempre está mirando.
+                    En Gravity Falls, nada es lo que parece.
+                    Porque acá, el verano nunca termina del todo… PD: Ningún gnomo fue lastimado en el proceso.</p>
+            </div>
+        </div>
+    </div>
+<footer class="bg-dark text-white text-center p-4 mt-5">
+    © 2025 • Valentina y Paula — Proyecto Gravity Falls
+</footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

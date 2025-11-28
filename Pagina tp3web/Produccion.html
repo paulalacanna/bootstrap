@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="paper container">
+        <h1 class="py-md-4 py-sm-1 text-center">Bienvenidos a la aventura de Gravity Falls!</h1>
+        <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container-fluid">
+                <!--<a class="navbar-brand" href="#">Navbar</a>-->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="Produccion.html">Produccion</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="Nosotros.html">Nosotros</a>
+                        </li>
+                    </ul>
+                </div>
+                <style>
+                    body {
+                        background-color: rgb(200, 151, 151);
+                    }
+                </style>
+
+            </div>
+        </nav>
+
+
+        <div class="row col-sm-12">
+            <div class="col-md-8 col-sm-12 g-4"></div>
+            <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="Processing-Logo.png" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Juego creado con el programa Processing P5JS</h5>
+                            <p>Para crearlo, utilizamos clases con sus respectivos objetos</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="libreria-p5js.jpg" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Objetos</h5>
+                            <p>Los objetos ayudan a organizar datos relacionados de cualquier tipo, incluidos otros
+                                objetos</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="prev" style="margin: 70px;">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="next" style="margin: 85px;">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-md-12 col-sm-12">
+                <div class="card">
+                    <img src="clases.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">
+                        <p> 1- Clase Juego(El Cerebro Central)
+                            Esta clase es la más importante; Actúa como el Controlador o Máquina de Estados del juego.
+                        </p>
+                        <p> • Administración de Estados ( this.estado):
+                            o Utilizamos una variable this.estado( "inicio", "jugando", "gameover", "ganaste") para
+                            controlar qué lógica ejecutar y qué pantalla se mostrará en la función mostrar(). Esto es
+                            fundamental para cambiar la experiencia del usuario (por ejemplo, de la cinemática de inicio
+                            al juego ).</p>
+                        • Manejo del Tiempo ( millis()):
+                        o En lugar de contar cuadros (frames), usa millis()(tiempo transcurrido en milisegundos)
+                        para la lógica crítica:
+                         Condición de Victoria: Calcula this.tiempoRestante restando el tiempo transcurrido (
+                        millis() - this.tiempoInicio) del this.tiempoTotal (10,000 ms, o 10 segundos).
+                         Aparición de Gnomos ( manejarGnomos): Usa this.nextSpawnTime para controlar cuándo debe
+                        aparecer el próximo gnomo, asegurando un tiempo aleatorio entre 1.5 y 2 segundos (
+                        random(1500, 2000)).</p>
+                        • Control de Desove y Distancia:
+                        o La función manejarGnomos() no solo usa el tiempo, sino también una condición de distancia
+                        ( ultimoGnomo.x < width - this.distanciaMinima) para evitar que los enemigos se generen
+                            demasiado cerca del último gnomo, haciendo el juego justo. • Colisiones (
+                            evaluarColisiones): o Implementa un algoritmo de detección de colisiones rectangulares
+                            verificando si las coordenadas y dimensiones de Dipper se superponen con las de cualquier
+                            gnomo. Al detectar una colisión, reduzca this.vidasy pase al estado "gameover" . </p>
+                            2- Clase Dipper (El Personaje Principal) Esta clase resume la física y la animación
+                            del jugador. • Física de Salto: o Implemente una simulación básica de gravedad:
+                            this.velY +=this.gravedad;. Esto hace que el salto sea más realista (aceleración hacia
+                            abajo). o El personaje solo puede saltar sí !this.saltando, evitando el doble salto. o
+                            La variable this.y se actualiza hasta que alcanza el this.suelo momento en que se
+                            detiene la gravedad y this.saltando vuelve a ser false. • Animación por Estados: o En
+                            dibujarDipper(), la imagen mostrada depende del estado: si this.saltando es true ,
+                            muestra el sprite de salto ( this.img3); si es falso , alterna entre los sprites de
+                            caminar ( this.mb) usando millis()para controlar la velocidad de la animación. </p>
+                            3- Clase
+                            Gnomo (El Enemigo) Esta clase maneja el comportamiento de los obstáculos. • Velocidad
+                            Aleatoria: o Asigna una velocidad horizontal aleatoria (random (3, 6)) en el
+                            constructor, asegurando que el juego no sea monótono y haya distintos niveles de
+                            dificultad en los obstáculos. • Movimiento: o La función correr() simplemente mueve al
+                            gnomo hacia la izquierda: this.x -=this.velocidad;. • Reciclaje: o La función
+                            fueraDePantalla() permite que la clase Juego elimine el gnomo del arreglo this.gnomos(
+                            splice), liberando memoria y manteniendo el juego eficiente. </p>
+                            4- Clase Boton (Interfaz
+                            Reutilizable) Esta clase es un ejemplo perfecto de Encapsulación en POO para elementos
+                            de interfaz de usuario. • Reutilización del Código: Defina una estructura de botón
+                            genérico (posición, tamaño, texto). Los botones de Comenzar, Reintentar y Volver a jugar
+                            se crean como instancias de esta clase, evitando repetir el código de dibujo y la
+                            detección de clic. • Detección de clic: La función estaPresionado(mx, my)comprueba de
+                            manera sencilla si el ratón ( mx, my) está dentro del área rectangular del botón. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-5" style="margin: 180px;">
+        <div class="col-md-8 col-sm-12 ">
+            <h4>Primeros pasos</h4>
+            <p>Lo primero que hicimos en este proyecto fue elegir el dibujo animado con el que íbamos a trabajar.
+                Elegimos Gravity Falls porque nos permitía crear una aventura gráfica con decisiones interesantes y una
+                estética reconocible. Después creamos la aventura en Canva, donde definimos las elecciones que tendría
+                que tomar cada jugador y también los distintos finales posibles. Cuando ya teníamos eso armado hicimos
+                un Figma con el userflow para poder visualizar mejor cada punto de la aventura y cómo se conectaban las
+                pantallas.
+
+                Con esa estructura lista, empezamos a crear la aventura en Processing. Esta etapa la desarrollamos
+                enfocándonos en la lógica de estados y decisiones. La mecánica central está basada en una máquina de
+                estados y transiciones: utilizamos una variable llamada pantalla y cada if (pantalla === x) representaba
+                una escena distinta. La función mousePressed() era la encargada de controlar las transiciones según la
+                decisión que tomaba el jugador.
+                También creamos funciones reutilizables, como dibujarBoton, para estandarizar el diseño de la interfaz y
+                permitir que la narración fuera el foco principal, logrando que las decisiones (como elegir entre
+                Dipper, Mabel o Stan) fueran claras y fáciles de entender.
+
+                El TP1 nos enseñó a manejar la lógica secuencial, la toma de decisiones basada en variables
+                (miEleccion), y la carga de múltiples activos (mb.push) y fuentes (loadFont). Estas habilidades fueron
+                cruciales para construir la estructura compleja del proyecto final.
+            </p>
+        </div>
+
+
+
+        <div class="col-md-4 col-sm-12 ">
+            <div class="card">
+
+                <img src="juego.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Introduccion al TP2</h5>
+                    <p class="card-text">Para el TP2 tuvimos que decidir qué tipo de juego queríamos
+                        diseñar. Finalmente
+                        elegimos
+                        hacer un runner, parecido al juego del dinosaurio de Chrome. En este juego el
+                        protagonista,
+                        Dipper,
+                        debe
+                        esquivar gnomos saltando por encima de ellos. Optamos por esta estética porque nos
+                        permitía
+                        mantener
+                        la
+                        identidad visual de la serie.
+                        Antes de empezar a programar, creamos sprites animados para el movimiento de Dipper:
+                    </p>
+                </div>
+            </div>
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                            Sprites
+                        </button>
+                    </h2>
+                    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">– Un sprite caminando con el pie derecho adelante.
+                            – Otro sprite con la postura invertida.
+                            – Y por ultimo un sprite extra simulando el salto.
+
+                            También hicimos variaciones de gnomos para sumar diversidad visual. Para
+                            completar la
+                            experiencia agregamos efectos de sonido: uno para el salto, otro para el Game
+                            Over y la
+                            canción
+                            característica de Gravity Falls (que ya habíamos usado en el TP anterior).
+
+                            <code></code>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                            Clases
+                        </button>
+                    </h2>
+                    <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">Una vez que tuvimos todo eso arrancamos a programar, en
+                            donde el
+                            código
+                            final está estructurado con Programación Orientada a Objetos (POO) usando p5.js.
+                            Dividimos
+                            el
+                            juego en distintas clases:
+
+                            Sketch principal: carga imágenes, sonidos y música; define setup, draw, preload,
+                            y las
+                            funciones
+                            mousePressed y keyPressed.
+
+                            -Clase Dipper: maneja al personaje, simula la gravedad (this.velY +=
+                            this.gravedad) y
+                            controla
+                            la
+                            animación de los sprites según esté en el suelo o en el aire.
+
+                            -Clase Gnomo: controla la aparición de enemigos con velocidades aleatorias
+                            (random(3, 6)),
+                            la
+                            posición inicial y hace que reaparezcan cuando salen de la pantalla.
+
+                            -Clase Juego: funciona como el “cerebro” de todo. Administra los estados
+                            (inicio, jugando,
+                            ganaste, game over) y maneja el temporizador general.
+
+                            -Clase Boton: esta clase encapsula todo lo relacionado con los botones
+                            interactivos. Define
+                            sus
+                            dimensiones, posición, texto y comportamiento. Incluye un método para dibujarlo
+                            con estilo
+                            propio (rectángulos redondeados, tipografía, alineación) y otro que detecta si
+                            el usuario
+                            hizo
+                            click adentro del área del botón. Gracias a esto pudimos reutilizar los botones
+                            en la
+                            pantalla
+                            inicial, en el menú, y en las transiciones de estado, manteniendo una estética
+                            coherente y
+                            evitando repetir código. <code>.</code>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseThree" aria-expanded="false"
+                            aria-controls="flush-collapseThree">
+                            Organizacion
+                        </button>
+                    </h2>
+                    <div id="flush-collapseThree" class="accordion-collapse collapse"
+                        aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">Además, estas clases nos permitieron organizar mejor el
+                            código y
+                            evitar
+                            que toda la lógica quedara mezclada dentro del draw. Gracias a la POO, cada
+                            elemento del
+                            juego
+                            —el jugador, los enemigos, los botones y el propio flujo del juego— tiene su
+                            propio
+                            comportamiento encapsulado, lo que facilitó corregir errores, modificar
+                            animaciones y
+                            ajustar
+                            mecánicas sin romper otras partes del proyecto. Esta estructura modular fue
+                            clave para que
+                            el
+                            juego se mantuviera ordenado a medida que se hacía más complejo.
+
+                            Uno de los desafíos más grandes fue el control del tiempo. En lugar de contar
+                            frames, usamos
+                            millis() para medir los 10 segundos que se necesitan para ganar y para regular
+                            la aparición
+                            de
+                            los gnomos, asegurando que siempre haya una distancia mínima para que el jugador
+                            pueda
+                            reaccionar.
+
+                            Para las colisiones, usamos un algoritmo de detección rectangular en el método
+                            evaluarColisiones(), verificando si el área de Dipper se superpone con la de
+                            algún gnomo.
+
+                            Sobre la narrativa visual, quisimos dar contexto antes de empezar a jugar.
+                            Programamos una
+                            pantalla de inicio con un texto que se desplaza verticalmente, narrando la
+                            sinopsis de la
+                            serie.
+                            Esto, sumado a los botones interactivos, ofrece una experiencia completa desde
+                            el inicio
+                            hasta
+                            la pantalla de victoria y derrota.
+                            <code></code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="bg-dark text-white text-center p-4 mt-5">
+    © 2025 • Valentina y Paula — Proyecto Gravity Falls
+</footer>
